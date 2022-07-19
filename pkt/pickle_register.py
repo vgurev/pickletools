@@ -17,6 +17,7 @@ def function(write_pk = pickle, read_pk = pickle):
     def decorator_function(func):
         data = write_pk.dumps(func)
         f = None
+        func = None
         def wrapper(x):
             nonlocal f, data
             if f is None:
